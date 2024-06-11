@@ -1,6 +1,11 @@
 .columns > div {
   display: flex;
   flex-direction: column;
+  
+}
+
+.columns.highlight > div {
+  background-color: var(--light-color);
 }
 
 .columns img {
@@ -9,25 +14,45 @@
 
 .columns > div > div {
   order: 1;
+  padding-right: 32px;
 }
 
 .columns > div > .columns-img-col {
   order: 0;
+  flex-direction: column;
+  flex: 2;  
 }
 
 .columns > div > .columns-img-col img {
   display: block;
 }
 
+.columns.adventure .columns-img-col{
+  width: 100%;
+}
+
+.columns.adventure .columns-img-col + div {
+  width: 80%;
+  margin: auto;
+  top: -200px;
+  position: relative;
+  background-color: white;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    gap: 32px;
+    /* gap: 32px; */
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+  .columns.adventure > div {
+    flex-direction: column;
   }
 }

@@ -4,6 +4,9 @@ header .nav-wrapper {
   width: 100%;
   z-index: 2;
   position: fixed;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  -webkit-transition: padding-bottom 0s ease, padding-top 0s;
 }
 
 header nav {
@@ -13,7 +16,7 @@ header nav {
     'hamburger brand tools' var(--nav-height)
     'sections sections sections' 1fr / auto 1fr auto;
   align-items: center;
-  gap: 0 2em;
+  gap: 0 20em;
   margin: auto;
   max-width: 1264px;
   height: var(--nav-height);
@@ -28,6 +31,10 @@ header nav[aria-expanded='true'] {
     'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100vh;
+}
+
+.scrolly .header .nav-wrapper {
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .26);
 }
 
 @media (width >= 600px) {
@@ -55,6 +62,17 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  text-decoration: none;
+}
+
+header nav .nav-sections a:any-link {
+  color: currentcolor;
+  padding: 15px 17px;
+  text-decoration: none;
+}
+
+header nav .nav-sections a:any-link:hover {
+  background-color: var(--link-color);
 }
 
 /* hamburger */
@@ -131,6 +149,28 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   transform: rotate(-45deg);
 }
 
+.nav-sections .icon-search .search-box {
+  background-color: #ebebeb8a;
+  border: none;
+  border-radius: 0;
+  color: var(--textColor, #202020);
+  font-size: var(--fontSizeXSmall, 9pt);
+  height: 40px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.nav-sections .icon-search img {
+  display: block;
+  position: absolute;
+  left: .5rem;
+  top: .8rem;
+  background-size: contain;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+}
+
 @media (width >= 900px) {
   header nav .nav-hamburger {
     display: none;
@@ -194,7 +234,7 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
+    align-self: flex-end;
   }
 
   header nav .nav-sections .nav-drop {
@@ -273,3 +313,14 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+@media (width >= 1024px) {
+  header .nav-wrapper {
+    padding-top: 50px;
+    padding-bottom: 20px;
+  }
+  .scrolly header .nav-wrapper {
+    padding-bottom: 15px;
+    padding-top: 15px;
+  }
+}
+ }
