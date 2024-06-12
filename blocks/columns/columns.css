@@ -27,11 +27,19 @@
   display: block;
 }
 
-.columns.adventure .columns-img-col{
+.adventure h3::after {
+  border-bottom: 2px solid var(--link-color);
+  content: "";
+  display: block;
+  padding-top: 8px;
+  width: 100px;
+}
+
+.adventure .columns.block .columns-img-col{
   width: 100%;
 }
 
-.columns.adventure .columns-img-col + div {
+.adventure .columns.block .columns-img-col + div {
   width: 80%;
   margin: auto;
   top: -200px;
@@ -52,7 +60,7 @@
     order: unset;
   }
 
-  .columns.adventure > div {
+  .adventure .columns.block > div {
     flex-direction: column;
   }
 }

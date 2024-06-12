@@ -16,7 +16,7 @@
   color: var(--dark-color);
 }
 
-.card-highlight h2::after {
+.card-highlight h3::after {
   border-bottom: 2px solid var(--link-color);
   content: "";
   display: block;
