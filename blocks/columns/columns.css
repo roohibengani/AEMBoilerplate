@@ -4,17 +4,17 @@
   
 }
 
+.columns > div > div {
+  order: 1;
+  padding-right: 32px;
+}
+
 .columns.highlight > div {
   background-color: var(--light-color);
 }
 
 .columns img {
   width: 100%;
-}
-
-.columns > div > div {
-  order: 1;
-  padding-right: 32px;
 }
 
 .columns > div > .columns-img-col {
@@ -45,13 +45,13 @@
   .columns > div {
     align-items: center;
     flex-direction: unset;
-    /* gap: 32px; */
   }
 
   .columns > div > div {
     flex: 1;
     order: unset;
   }
+
   .columns.adventure > div {
     flex-direction: column;
   }

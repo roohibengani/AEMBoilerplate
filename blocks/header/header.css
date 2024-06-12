@@ -6,7 +6,7 @@ header .nav-wrapper {
   position: fixed;
   padding-top: 15px;
   padding-bottom: 15px;
-  -webkit-transition: padding-bottom 0s ease, padding-top 0s;
+  transition: padding-bottom 0s ease, padding-top 0s;
 }
 
 header nav {
@@ -34,7 +34,8 @@ header nav[aria-expanded='true'] {
 }
 
 .scrolly .header .nav-wrapper {
-  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .26);
+  box-shadow: 0 8px 20px 0;
+  color: color(rgb 0 0 0 / 26%);
 }
 
 @media (width >= 600px) {
@@ -153,11 +154,16 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
   background-color: #ebebeb8a;
   border: none;
   border-radius: 0;
-  color: var(--textColor, #202020);
-  font-size: var(--fontSizeXSmall, 9pt);
+  color: var( --dark-color);
+  font-size: 10px;
   height: 40px;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+header nav .nav-brand img {
+  width: 128px;
+  height: auto;
 }
 
 .nav-sections .icon-search img {
@@ -185,11 +191,6 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
-}
-
-header nav .nav-brand img {
-  width: 128px;
-  height: auto;
 }
 
 /* sections */
@@ -313,14 +314,15 @@ header nav .nav-sections ul > li > ul > li {
 header nav .nav-tools {
   grid-area: tools;
 }
+
 @media (width >= 1024px) {
   header .nav-wrapper {
     padding-top: 50px;
     padding-bottom: 20px;
   }
+
   .scrolly header .nav-wrapper {
     padding-bottom: 15px;
     padding-top: 15px;
   }
 }
- }
