@@ -14,7 +14,26 @@ export default async function decorate(block) {
   // decorate footer DOM
   block.textContent = '';
   const footer = document.createElement('div');
-  while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
+
+  // decorate nav DOM
+  block.textContent = '';
+  const nav = document.createElement('nav');
+  nav.id = 'nav';
+  while (fragment.firstElementChild !== fragment.lastElementChild) {
+    nav.append(fragment.firstElementChild);
+  }
+
+  const classes = ['brand', 'sections', 'sections'];
+  classes.forEach((c, i) => {
+    const section = nav.children[i];
+    if (section) section.classList.add(`nav-${c}`);
+  });
+  nav.lastElementChild.classList.add('nav-tools');
+  const navWrapper = document.createElement('div');
+  navWrapper.className = 'nav-wrapper';
+  navWrapper.append(nav);
+  footer.append(navWrapper);
+  footer.append(fragment.lastElementChild);
 
   block.append(footer);
 }

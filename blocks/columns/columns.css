@@ -6,7 +6,6 @@
 
 .columns > div > div {
   order: 1;
-  padding-right: 32px;
 }
 
 .columns.highlight > div {
@@ -35,24 +34,11 @@
   width: 100px;
 }
 
-.adventure .columns.block .columns-img-col{
-  width: 100%;
-}
-
-.adventure .columns.block .columns-img-col + div {
-  width: 80%;
-  margin: auto;
-  top: -200px;
-  position: relative;
-  background-color: white;
-  padding-left: 32px;
-  padding-right: 32px;
-}
-
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
     flex-direction: unset;
+    gap:32px;
   }
 
   .columns > div > div {
@@ -62,5 +48,16 @@
 
   .adventure .columns.block > div {
     flex-direction: column;
+    margin-bottom: -200px;
+  }
+
+  .adventure .columns.block .columns-img-col + div {
+    width: 80%;
+    margin: auto;
+    top: -200px;
+    position: relative;
+    background-color: white;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
